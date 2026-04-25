@@ -1,7 +1,10 @@
 **/*
 !dist/**/*
+!index.js
 !package.json
 !README.md
 !LICENSE.md
 dist/**/*.map
 dist/**/*.tsbuildinfo
+dist/package.json
+dist/tsconfig.tsbuildinfo
