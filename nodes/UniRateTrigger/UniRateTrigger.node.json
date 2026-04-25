@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-base.uniRateTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Finance & Accounting", "Utility"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://github.com/UniRate-API/n8n-nodes-unirate#credentials"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://github.com/UniRate-API/n8n-nodes-unirate#unirate-trigger-node"
+			}
+		]
+	}
+}
