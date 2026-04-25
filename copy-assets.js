@@ -26,4 +26,9 @@ function walk(dir, relBase) {
 }
 
 for (const root of ROOTS) walk(root, root);
+
+// TS build cache — useful locally, never wanted in the published tarball.
+const buildInfo = path.join('dist', 'tsconfig.tsbuildinfo');
+if (fs.existsSync(buildInfo)) fs.unlinkSync(buildInfo);
+
 console.log('Assets copied to dist/');

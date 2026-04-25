@@ -113,16 +113,17 @@ export class UniRateTrigger implements INodeType {
 		const threshold = this.getNodeParameter('threshold', 0) as number;
 		const emitOnFirstPoll = this.getNodeParameter('emitOnFirstPoll', true) as boolean;
 
-		const credentials = await this.getCredentials('uniRateApi');
-		const apiKey = credentials.apiKey as string;
-
-		const response = (await this.helpers.httpRequest({
-			method: 'GET',
-			url: 'https://api.unirateapi.com/api/rates',
-			qs: { from, to, api_key: apiKey },
-			headers: { Accept: 'application/json' },
-			json: true,
-		})) as RateResponse;
+		const response = (await this.helpers.httpRequestWithAuthentication.call(
+			this,
+			'uniRateApi',
+			{
+				method: 'GET',
+				url: 'https://api.unirateapi.com/api/rates',
+				qs: { from, to },
+				headers: { Accept: 'application/json' },
+				json: true,
+			},
+		)) as RateResponse;
 
 		if (response.rate === undefined || response.rate === null) {
 			return null;

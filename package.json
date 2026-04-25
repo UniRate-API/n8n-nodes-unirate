@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-unirate",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "n8n community node for the UniRate API — currency conversion, exchange rates, historical rates, time series, and VAT rates.",
 	"keywords": [
 		"n8n-community-node-package",
