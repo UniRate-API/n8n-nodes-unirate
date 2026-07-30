@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.uniRateTrigger",
+	"node": "n8n-nodes-unirate.uniRateTrigger",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": ["Finance & Accounting", "Utility"],
