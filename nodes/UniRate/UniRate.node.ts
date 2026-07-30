@@ -1,4 +1,5 @@
 import type { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { NodeConnectionTypes } from 'n8n-workflow';
 
 import { rateOperations, rateFields } from './descriptions/RateDescription';
 import { conversionOperations, conversionFields } from './descriptions/ConversionDescription';
@@ -20,8 +21,8 @@ export class UniRate implements INodeType {
 			name: 'UniRate',
 		},
 		usableAsTool: true,
-		inputs: ['main'],
-		outputs: ['main'],
+		inputs: [NodeConnectionTypes.Main],
+		outputs: [NodeConnectionTypes.Main],
 		credentials: [
 			{
 				name: 'uniRateApi',

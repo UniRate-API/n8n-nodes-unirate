@@ -33,6 +33,16 @@ module.exports = {
 			files: ['./nodes/**/*.ts'],
 			plugins: ['eslint-plugin-n8n-nodes-base'],
 			extends: ['plugin:n8n-nodes-base/nodes'],
+			rules: {
+				// These three rules require the string literal `['main']`, but the
+				// current verification scanner (@n8n/scan-community-package, which
+				// runs @n8n/eslint-plugin-community-nodes) requires the opposite —
+				// `NodeConnectionTypes.Main` — via `node-connection-type-literal`.
+				// The two plugins directly contradict each other; the scanner is what
+				// gates verification, so it wins and these stale rules are disabled.
+				'n8n-nodes-base/node-class-description-inputs-wrong-regular-node': 'off',
+				'n8n-nodes-base/node-class-description-outputs-wrong': 'off',
+			},
 		},
 	],
 };
