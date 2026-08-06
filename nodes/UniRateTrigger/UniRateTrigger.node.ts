@@ -28,11 +28,6 @@ export class UniRateTrigger implements INodeType {
 			name: 'UniRate Trigger',
 		},
 		polling: true,
-		// Required by the verification scanner's `node-usable-as-tool` rule, which
-		// also fires on trigger nodes. The property is typed `true | ... |
-		// undefined` (there is no `false`), and n8n never exposes a polling trigger
-		// as an AI tool, so this is inert here — it just satisfies the linter.
-		usableAsTool: true,
 		inputs: [],
 		outputs: [NodeConnectionTypes.Main],
 		credentials: [
